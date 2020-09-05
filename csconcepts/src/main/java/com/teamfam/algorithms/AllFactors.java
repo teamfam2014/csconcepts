@@ -50,7 +50,7 @@ public class AllFactors{
                         }                        
                         factors.addAll(remainderFactorSet);
                     }
-                }*/
+                }*///
             }
             solutionSet.add(factors);
         }
