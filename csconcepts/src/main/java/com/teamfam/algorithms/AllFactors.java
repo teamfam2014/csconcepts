@@ -31,26 +31,26 @@ public class AllFactors{
                     factors.add(candidate);
                 }
             }else{
-                //Candidate is not a factor of the target. Get the remainder, and get the multiple
-                int factor = target / candidate;
+                //Candidate is not a factor of the target. Get the remainder, and get the quotient
+                int quotient = target / candidate;
                 int remainder = target % candidate;
                 if (candidateSet.contains(remainder)){
-                    //ensure that the factor is added and the remainder are added 
-                    for(int index = 0; index < factor; index++){
+                    //ensure that the candidate is added and the remainder are added 
+                    for(int index = 0; index < quotient; index++){
                         factors.add(candidate);
                     }
                     factors.add(remainder);
-                }//else{
-                /*    //we need to break down the remainder to see if there are elements in the candidate set that add to the remainder                    
+                }else{
+                    //we need to break down the remainder to see if there are elements in the candidate set that add to the remainder                    
                     Set<Set<Integer>> remainderFactorsSolutionSet = getFactors(remainder,candidateSet);
                     for(Set<Integer> remainderFactorSet : remainderFactorsSolutionSet){
                         //ensure that the factors are added each time
-                        for(int index = 0; index < factor; index++){
+                        for(int index = 0; index < quotient; index++){
                             factors.add(candidate);
                         }                        
                         factors.addAll(remainderFactorSet);
                     }
-                }*///
+                }
             }
             solutionSet.add(factors);
         }
