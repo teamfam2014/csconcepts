@@ -42,8 +42,8 @@ public class AllFactors{
                     factors.add(remainder);
                 }else{
                     //we need to break down the remainder to see if there are elements in the candidate set that add to the remainder                    
-                    Set<Set<Integer>> remainderFactorsSolutionSet = getFactors(remainder,candidateSet);
-                    for(Set<Integer> remainderFactorSet : remainderFactorsSolutionSet){
+                    Set<List<Integer>> remainderFactorsSolutionSet = getFactors(remainder,candidateSet);
+                    for(List<Integer> remainderFactorSet : remainderFactorsSolutionSet){
                         //ensure that the factors are added each time
                         for(int index = 0; index < quotient; index++){
                             factors.add(candidate);
