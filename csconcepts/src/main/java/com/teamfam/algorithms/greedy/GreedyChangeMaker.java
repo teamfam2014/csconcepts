@@ -30,7 +30,7 @@ public class GreedyChangeMaker {
 
         Map<Coin,Integer> changeMap = new HashMap<Coin,Integer>();
 
-        if (Coin.QUARTER.getValue() / amount > 0){
+        if (amount / Coin.QUARTER.getValue() > 0){
             int numQuarters = (int)(amount / Coin.QUARTER.getValue());
             changeMap.put(Coin.QUARTER, numQuarters);
             changeMap.putAll(makeChange(amount % Coin.QUARTER.getValue()));
